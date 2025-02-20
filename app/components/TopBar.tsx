@@ -6,7 +6,7 @@ const TopBar = () => {
             className="flex h-[80px] w-full place-items-center justify-around bg-gray-200 px-5 max-md:hidden"
         >
             <p className="primary-text-color text-3xl font-semibold">
-                BigBros Bike Repairs
+                Bike Menders
             </p>
 
             <div className="flex gap-4">
