@@ -20,10 +20,9 @@ const Navbar = () => {
                 <div
                     className="flex h-full w-max gap-5 text-base max-md:mt-[30px] max-md:flex-col max-md:place-items-end max-md:gap-5 md:mx-auto md:place-items-center"
                 >
-                    <a className="hover:text-purple-700" href=""> About us </a>
-                    <a className="hover:text-purple-700" href=""> Services </a>
-                    <a className="hover:text-purple-700" href=""> Price </a>
-                    <a className="hover:text-purple-700" href=""> Contact us </a>
+                    <a className="hover:text-purple-700" href="#about"> About us </a>
+                    <a className="hover:text-purple-700" href="#services"> Services </a>
+                    <a className="hover:text-purple-700" href="contact"> Contact us </a>
                 </div>
                 <div
                     className="flex place-items-center gap-[20px] text-xl max-md:w-full max-md:place-content-center max-md:!text-white"

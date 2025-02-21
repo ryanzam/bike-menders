@@ -5,6 +5,9 @@ import Navbar from "../components/NavBar";
 
 import "../globals.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
+import Hero from "../components/Hero";
+import About from "../components/About";
+import Footer from "../components/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -33,7 +36,9 @@ export default function RootLayout({
       >
         <TopBar />
         <Navbar />
+        <Hero />
         {children}
+        <Footer />
       </body>
     </html>
   );

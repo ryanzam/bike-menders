@@ -19,3 +19,12 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+#hero {
+  background: url("../public/bg1.jpg");
+  min-width: 100vh;
+  height: 400px;
+  background-size: cover;
+  background-position: center;
+}
+
