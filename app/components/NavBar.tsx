@@ -6,13 +6,13 @@ const Navbar = () => {
             className="sticky top-0 z-20 flex h-[60px] w-full bg-white px-[10%] shadow-lg max-md:mr-auto max-md:bg-primary md:justify-around"
         >
             <div className="flex w-fit">
-                <div className="w-[200px] p-1">
+                <a className="w-[200px] p-1" href='/'>
                     <img
                         src="./logo.png"
                         alt="bike-menders logo"
                         className="object-contain"
                     />
-                </div>
+                </a>
             </div>
             <div
                 className="flex gap-10"
