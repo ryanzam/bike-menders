@@ -1,4 +1,5 @@
 import React from 'react'
+import Image from 'next/image'
 
 const Footer = () => {
     return (
@@ -8,7 +9,7 @@ const Footer = () => {
             <div
                 className="flex h-full w-[250px] flex-col place-items-center gap-6 max-md:w-full"
             >
-                <img src="./logo.png" alt="logo" className="w-[150px]" />
+                <Image src="/logo.png" alt="logo" className="w-[150px]" width={150} height={150}/>
                 <div>
                     Bharatpur, Chitwan
                     <br />

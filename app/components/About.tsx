@@ -1,14 +1,14 @@
 import React from 'react'
-import Button from './ui/Button'
+import Image from 'next/image'
 
 const About = () => {
     return (
-        <div id='about' className='w-[75%] flex flex-col mx-auto'>
+        <div id='about' className='w-[75%] flex flex-col mx-auto py-10'>
             <h2 className='text-purple-900 text-5xl text-center py-6'>Bike Menders, BNP</h2>
 
             <div className='grid grid-cols-2 gap-14'>
                 <div>
-                    <img src="./bg2.jpg" alt="" />
+                    <Image src="/bg2.jpg" alt="motorbike garage" width={350} height={350} />
                 </div>
 
                 <div className='my-auto flex flex-col gap-3'>

@@ -3,7 +3,7 @@ import React from 'react'
 interface IButtonProps {
     title: string
     icon?: string
-    type?: any
+    type?: "submit" | "reset" | "button" | undefined
 }
 
 const Button = ({ title, icon, type }: IButtonProps) => {

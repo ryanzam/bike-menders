@@ -3,6 +3,7 @@
 import React, { useState } from 'react'
 import Button from './ui/Button'
 import { useRouter } from 'next/navigation'
+import Image from 'next/image'
 
 export default function Booking() {
 
@@ -41,10 +42,12 @@ export default function Booking() {
             <div
                 className="flex h-[350px] w-[350px] overflow-hidden rounded-md max-md:hidden"
             >
-                <img
-                    src="./bike1.jpg"
-                    alt="car wash"
+                <Image
+                    src="/bike1.jpg"
+                    alt="bike wash"
                     className="w-full object-cover"
+                    width={350}
+                    height={350}
                 />
             </div>
             <div className="mt-[5%] flex h-full flex-col gap-[5%]">
