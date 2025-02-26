@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import React from 'react'
 
 const Navbar = () => {
@@ -6,13 +7,13 @@ const Navbar = () => {
             className="sticky top-0 z-20 flex h-[60px] w-full bg-white px-[10%] shadow-lg max-md:mr-auto max-md:bg-primary md:justify-around"
         >
             <div className="flex w-fit">
-                <a className="w-[200px] p-1" href='/'>
+                <Link className="w-[200px] p-1" href='/'>
                     <img
                         src="./logo.png"
                         alt="bike-menders logo"
                         className="object-contain"
                     />
-                </a>
+                </Link>
             </div>
             <div
                 className="flex gap-10"
@@ -20,14 +21,14 @@ const Navbar = () => {
                 <div
                     className="flex h-full w-max gap-5 text-base max-md:mt-[30px] max-md:flex-col max-md:place-items-end max-md:gap-5 md:mx-auto md:place-items-center"
                 >
-                    <a className="hover:text-purple-700" href="#about"> About us </a>
-                    <a className="hover:text-purple-700" href="#services"> Services </a>
-                    <a className="hover:text-purple-700" href="contact"> Contact us </a>
+                    <Link className="hover:text-purple-700" href="#about"> About us </Link>
+                    <Link className="hover:text-purple-700" href="#services"> Services </Link>
+                    <Link className="hover:text-purple-700" href="#contact"> Contact us </Link>
                 </div>
                 <div
                     className="flex place-items-center gap-[20px] text-xl max-md:w-full max-md:place-content-center max-md:!text-white"
                 >
-                    <a
+                    <Link
                         href="https://www.facebook.com/"
                         target="_blank"
                         rel="noreferrer noopener"
@@ -35,8 +36,8 @@ const Navbar = () => {
                         className="transition-colors duration-[0.3s] hover:text-purple-900"
                     >
                         <i className="bi bi-facebook"></i>
-                    </a>
-                    <a
+                    </Link>
+                    <Link
                         href="https://www.instagram.com//"
                         target="_blank"
                         rel="noreferrer noopener"
@@ -44,7 +45,7 @@ const Navbar = () => {
                         className="transition-colors duration-[0.3s] hover:text-purple-900"
                     >
                         <i className="bi bi-instagram"></i>
-                    </a>
+                    </Link>
                 </div>
             </div>
             <button
