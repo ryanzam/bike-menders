@@ -1,4 +1,5 @@
 import React from 'react'
+import Image from 'next/image'
 
 const Services = () => {
     return (
@@ -22,10 +23,12 @@ const Services = () => {
                     className="flex h-[350px] w-[200px] flex-col place-content-center place-items-center gap-4 text-center max-md:h-[150px] max-md:w-[150px]"
                 >
                     <div className="h-[150px] w-full max-md:h-[100px]">
-                        <img
+                        <Image
                             src="./repair.svg"
                             alt="car wash"
                             className="h-full w-full object-contain"
+                            height={150}
+                            width={150}
                         />
                     </div>
                     <div
@@ -39,10 +42,12 @@ const Services = () => {
                     className="flex h-[350px] w-[200px] flex-col place-content-center place-items-center gap-4 text-center max-md:h-[150px] max-md:w-[150px]"
                 >
                     <div className="h-[150px] w-full max-md:h-[100px]">
-                        <img
+                        <Image
                             src="./wash.svg"
                             alt="car wash"
                             className="h-full w-full object-contain"
+                            height={150}
+                            width={150}
                         />
                     </div>
                     <div
@@ -56,10 +61,12 @@ const Services = () => {
                     className="flex h-[350px] w-[200px] flex-col place-content-center place-items-center gap-4 text-center max-md:h-[150px] max-md:w-[150px]"
                 >
                     <div className="h-[150px] w-full max-md:h-[100px]">
-                        <img
+                        <Image
                             src="./bike.svg"
                             alt="car wash"
                             className="h-full w-full object-contain"
+                            height={150}
+                            width={150}
                         />
                     </div>
                     <div

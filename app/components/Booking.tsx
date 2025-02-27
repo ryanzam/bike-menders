@@ -48,7 +48,7 @@ export default function Booking() {
         return allBookedDates.includes(bookingDate)
     }
 
-    const handleTimeChange = (val: any) => {
+    const handleTimeChange = (val: string) => {
         const allBookedTimes = bookedDates.map(b => {
             const time = b.split("T")[1]
             return time.split(":").slice(0, 2).join(":")

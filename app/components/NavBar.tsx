@@ -1,5 +1,6 @@
-import Link from 'next/link'
 import React from 'react'
+import Link from 'next/link'
+import Image from 'next/image'
 
 const Navbar = () => {
     return (
@@ -8,10 +9,12 @@ const Navbar = () => {
         >
             <div className="flex w-fit">
                 <Link className="w-[200px] p-1" href='/'>
-                    <img
+                    <Image
                         src="./logo.png"
                         alt="bike-menders logo"
                         className="object-contain"
+                        height={80}
+                        width={200}
                     />
                 </Link>
             </div>
