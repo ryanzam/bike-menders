@@ -1,11 +1,6 @@
 import cron from "node-cron"
-import mailer from 'nodemailer';
 import prisma from "../../libs/prismadb"
-
-const transporter = mailer.createTransport({
-    service: 'gmail',
-    auth: { user: process.env.EMAIL_USER, pass: process.env.EMAIL_PASS },
-});
+import { sendMail } from "@/utils/sendMail";
 
 cron.schedule('0 5 * * *', async () => {
     const tomorrow = new Date();
@@ -16,11 +11,6 @@ cron.schedule('0 5 * * *', async () => {
     });
 
     bookings.forEach((booking) => {
-        transporter.sendMail({
-            from: process.env.EMAIL_USER,
-            to: booking.email,
-            subject: 'MotorBike Service Reminder',
-            text: `Hi ${booking.fullname}, your motorbike service is scheduled for ${booking.serviceDate}.`,
-        });
+        sendMail(booking)
     });
 });

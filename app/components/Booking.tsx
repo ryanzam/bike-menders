@@ -1,14 +1,31 @@
 "use client"
 
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Button from './ui/Button'
 import { useRouter } from 'next/navigation'
 import Image from 'next/image'
 
+const timeData = [
+    "08:00",
+    "09:00",
+    "10:00",
+    "11:00",
+    "12:00",
+    "13:00",
+    "14:00",
+    "15:00",
+    "16:00",
+    "17:00",
+    "18:00"
+]
+
+
 export default function Booking() {
 
     const [bookingTime, setBookingTime] = useState("")
-    const [bookingDate, setBookingDate] = useState("")
+    const [bookingDate, setBookingDate] = useState(new Date().toISOString().split("T")[0])
+
+    const [bookedDates, setBookedDates] = useState<string[]>([])
 
     const [formData, setFormData] = useState({
         fullname: "",
@@ -19,6 +36,30 @@ export default function Booking() {
     })
 
     const router = useRouter()
+
+    useEffect(() => {
+        fetch("/api/bookings")
+            .then(res => res.json())
+            .then(data => setBookedDates(data))
+    }, [])
+
+    const isDateBooked = () => {
+        const allBookedDates = bookedDates.map(b => b.split("T")[0])
+        return allBookedDates.includes(bookingDate)
+    }
+
+    const handleTimeChange = (val: any) => {
+        const allBookedTimes = bookedDates.map(b => {
+            const time = b.split("T")[1]
+            return time.split(":").slice(0, 2).join(":")
+        })
+
+        if (isDateBooked() && allBookedTimes.includes(val)) {
+            alert("This time is booked. Choose another time.")
+            return
+        }
+        setBookingTime(val)
+    }
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
@@ -102,6 +143,18 @@ export default function Booking() {
                     </div>
 
                     <div className="flex gap-4">
+                        <div className="flex flex-col gap-1">
+                            <div className="text-gray-500">Date</div>
+                            <input
+                                className='p-3 rounded-lg focus:outline-purple-950'
+                                type='date'
+                                required
+                                min={new Date().toISOString().split("T")[0]}
+                                value={bookingDate}
+                                onChange={e => setBookingDate(e.target.value)}
+                            />
+                        </div>
+
                         <div className="flex w-full flex-col gap-1">
                             <div className="text-gray-500">Time</div>
 
@@ -111,32 +164,13 @@ export default function Booking() {
                                 required
                                 list='opening-hours'
                                 value={bookingTime}
-                                onChange={(e) => setBookingTime(e.target.value)}
+                                onChange={e => handleTimeChange(e.target.value)}
+                                min={new Date().getHours() + 1 + ":00"}
                             />
                             <datalist id="opening-hours">
-                                <option value="08:00" />
-                                <option value="09:00" />
-                                <option value="10:00" />
-                                <option value="11:00" />
-                                <option value="12:00" />
-                                <option value="13:00" />
-                                <option value="14:00" />
-                                <option value="15:00" />
-                                <option value="16:00" />
-                                <option value="17:00" />
-                                <option value="18:00" />
+                                {timeData.map((td, idx) =>
+                                    <option key={idx} value={td} />)}
                             </datalist>
-                        </div>
-                        <div className="flex flex-col gap-1">
-                            <div className="text-gray-500">Date</div>
-                            <input
-                                className='p-3 rounded-lg focus:outline-purple-950'
-                                type='date'
-                                required
-                                min={new Date().toISOString().split("T")[0]}
-                                value={bookingDate}
-                                onChange={(e) => setBookingDate(e.target.value)}
-                            />
                         </div>
                     </div>
 
